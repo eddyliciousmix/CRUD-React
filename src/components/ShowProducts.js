@@ -104,9 +104,9 @@ const ShowProducts = () => {
 
             <div className="container-fluid">
                 <div className="row mt-3">
-                        <div className="col-md-4 offset-4">
-                            <div className="d-grip mx-auto">
-                                <button onClick={()=>openModal(1)} className="btn btn-success" data-bs-toggle='modal' data-bs-target='#modalProducts'>
+                        <div className="col-md-4 offset-2 ">
+                            <div className="d-grip gap-2 mx-auto">
+                                <button onClick={()=>openModal(1)} className="btn btn-success btn-lg" data-bs-toggle='modal' data-bs-target='#modalProducts'>
                                     <i className="fa-solid fa-circle-plus"></i> Añadir
                                 </button>
                             </div>
@@ -116,9 +116,9 @@ const ShowProducts = () => {
                 <div className="row mt-3">
                     <div className="col-12 col-lg-8 offset-0 offset-lg-2">
                         <div className="table-responsive">
-                            <table className="table table-bordered">
-                                <thead>
-                                    <tr><th>#</th><th>PRODUCTO</th><th>DESCRIPCION</th><th>PRECIO</th></tr>
+                            <table className="table table-bordered table-hover">
+                                <thead class="table-dark">
+                                    <tr><th>#</th><th>PRODUCTO</th><th>DESCRIPCION</th><th>PRECIO</th><th></th></tr>
                                 </thead>
                                 <tbody className="table-group-divider">
                                     {products.map( (product,i)=>(
@@ -129,7 +129,7 @@ const ShowProducts = () => {
                                             <td>${new Intl.NumberFormat('es-mx').format(product.price)}</td>
                                             <td>
                                                 <button onClick={() =>openModal(2,product.id,product.name,product.description,product.price)}
-                                                       className="btn btn-warning" data-bs-toggle='modal' data-bs-target='#modalProducts'>
+                                                       className="btn btn-success" data-bs-toggle='modal' data-bs-target='#modalProducts'>
                                                     <i className="fa-solid fa-edit"></i>
                                                 </button>
                                                 &nbsp;
